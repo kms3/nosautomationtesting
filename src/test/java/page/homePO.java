@@ -1,6 +1,7 @@
 package page;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class homePO extends basePO{
         super(driver);
     }
 
-    @FindBy(xpath = "/html/body/app-root/ng-component/home-landingpage/div/div[2]/div[2]/div[2]/div[3]/div[2]")
+    @FindBy(xpath = "//div[@class='status-label']")
     public WebElement statusAutenticacao;
 
     @FindBy(xpath = "/html/body/app-root/ng-component/home-landingpage/div/div[1]/div[1]/div[1]")
@@ -29,12 +30,14 @@ public class homePO extends basePO{
     @FindBy(xpath = "/html/body/app-root/app-nosid-snackbar/nosid-snackbar/div/div[2]")
     public WebElement popUpAlteracaoSucesso;
 
+    public homePO() {
+        super();
+    }
+
 
     public void validateStatusAutenticacao(String statusEsperado){
-
-        String statusAtual = statusAutenticacao.getText();
-
-        Assert.assertEquals(statusAtual, statusEsperado);
+        
+        Assert.assertEquals(statusAutenticacao.getText(), statusEsperado);
     }
 
     public void insertOrUpdateTheUsername(String username){

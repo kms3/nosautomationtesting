@@ -5,7 +5,6 @@ import org.junit.Test;
 import page.loginPO;
 import page.homePO;
 
-
 public class testscasesNOS extends baseTest {
 
     public static loginPO loginPage;
@@ -49,13 +48,13 @@ public class testscasesNOS extends baseTest {
     }
 
     @Test
-    public void InsertAnUserName(){
+    public void UpdateAnUserNameSuccessfully(){
         loginPage.checkPopupCookies();
         loginPage.insertEmail("karinamotaslv@gmail.com");
         loginPage.insertPassword("Nwkarinasilva23!");
         loginPage.checkPopupCookies();
         loginPage.validationLoginSuccessfully();
-        homePage.insertOrUpdateTheUsername("karinasilva1222");
+        homePage.insertOrUpdateTheUsername("karinasilva1215");
     }
 
 }

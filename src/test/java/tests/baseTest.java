@@ -20,6 +20,6 @@ public abstract class baseTest {
     }
     @AfterClass
     public static void finishExecution(){
-        //driver.quit();
+        driver.quit();
     }
 }

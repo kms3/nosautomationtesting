@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.*;
-import org.junit.Test;
+
 
 
 public class loginPO extends basePO {
@@ -21,8 +21,8 @@ public class loginPO extends basePO {
     @FindBy(xpath = "//*[@id=\"username-input\"]")
     public WebElement emailField;
 
-    @FindBy(xpath = "//*[@id=\"c-right\"]/a[1]")
-    public WebElement XpathPopUp;
+    @FindBy(xpath = "//a[@class='btn js-lang' and @onclick='acceptAllAndClose()']")
+    public WebElement popUpClick;
 
     @FindBy(xpath = "/html/body/app-root/ng-component/div/authentication-username/div/div/div/div[1]/section[2]/form/div[2]/input")
     public WebElement buttonEntrarEmail;
@@ -43,7 +43,7 @@ public class loginPO extends basePO {
     public void checkPopupCookies(){
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement popUp = wait.until(ExpectedConditions.elementToBeClickable(XpathPopUp));
+        WebElement popUp = wait.until(ExpectedConditions.elementToBeClickable(popUpClick));
 
         if (popUp.isEnabled()){
             popUp.click();
@@ -81,4 +81,6 @@ public class loginPO extends basePO {
         assertTrue(butEntrar.isEnabled());
 
     }
+
+
 }

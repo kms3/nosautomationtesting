@@ -19,4 +19,8 @@ public abstract class basePO {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    public basePO() {
+
+    }
 }
